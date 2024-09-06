@@ -76,7 +76,7 @@ public:
     {
         p = first;
         // Traverse the linked list and print each node's data
-        while (p != NULL)
+        while (p != nullptr)
         {
             cout << p->data << " ";
             p = p->next;
@@ -102,7 +102,7 @@ public:
         Node *p = first;
         int count = 0;
         // Traverse the linked list and count the nodes
-        while (p != NULL)
+        while (p != nullptr)
         {
             count++;
             p = p->next;
@@ -113,7 +113,7 @@ public:
     // Calculate the length of the linked list recursively (version 1)
     int rLength1(Node *p)
     {
-        if (p != NULL)
+        if (p != nullptr)
         {
             // Return 1 plus the length of the remaining list
             return rLength1(p->next) + 1;
@@ -144,7 +144,7 @@ public:
         Node *p = first;
         int sum = 0;
         // Traverse the linked list and add each node's data to sum
-        while (p != NULL)
+        while (p != nullptr)
         {
             sum += p->data;
             p = p->next;
@@ -155,7 +155,7 @@ public:
     // Calculate the sum of all elements in the linked list recursively
     int rSum(Node *p)
     {
-        if (p != NULL)
+        if (p != nullptr)
         {
             // Return the sum of the current node's data and the sum of the remaining list
             return rSum(p->next) + p->data;
@@ -172,7 +172,7 @@ public:
         Node *p = first;
         int max = INT_MIN;
         // Traverse the linked list and update max if current node's data is greater
-        while (p != NULL)
+        while (p != nullptr)
         {
             if (p->data > max)
             {
@@ -187,7 +187,7 @@ public:
     int rMax(Node *p)
     {
         int x = 0;
-        if (p == NULL)
+        if (p == nullptr)
         {
             // Base case: if the list is empty, return the smallest possible integer
             return INT_MIN;
@@ -202,7 +202,7 @@ public:
     Node *Search(Node *p, int key)
     {
         // Traverse the list until the end
-        while (p != NULL)
+        while (p != nullptr)
         {
             // If the key is found, return the pointer to the node
             if (key == p->data)
@@ -211,17 +211,17 @@ public:
             }
             p = p->next;
         }
-        // If the key is not found, return NULL
-        return NULL;
+        // If the key is not found, return nullptr
+        return nullptr;
     }
 
     // Recursively search for an element in the linked list
     Node *rSearch(Node *p, int key)
     {
-        if (p == NULL)
+        if (p == nullptr)
         {
-            // Base case: if the list is empty, return NULL
-            return NULL;
+            // Base case: if the list is empty, return nullptr
+            return nullptr;
         }
         // If the key is found, return the pointer to the node
         if (key == p->data)
@@ -237,7 +237,7 @@ public:
     {
         Node *q = nullptr;
         // Traverse the list until the end
-        while (p != NULL)
+        while (p != nullptr)
         {
             // If the key is found
             if (p->data == key)
@@ -254,8 +254,8 @@ public:
             q = p;
             p = p->next;
         }
-        // If the key is not found, return NULL
-        return NULL;
+        // If the key is not found, return nullptr
+        return nullptr;
     }
 
     // Insert an element at a specified index
@@ -279,7 +279,7 @@ public:
         {
             // Traverse the list to find the correct position
             p = first;
-            for (int i = 0; i < index - 1 && p != NULL; i++)
+            for (int i = 0; i < index - 1 && p != nullptr; i++)
             {
                 p = p->next;
             }
@@ -297,7 +297,7 @@ public:
     {
         Node *t = new Node(x);
         // If the list is empty, set the new node as the first node
-        if (first == NULL)
+        if (first == nullptr)
         {
             first = t;
         }
@@ -317,9 +317,9 @@ public:
     // Insert an element into a sorted list
     void insertSorted(int x)
     {
-        Node *p = first, *q = NULL, *t = new Node(x);
+        Node *p = first, *q = nullptr, *t = new Node(x);
         // If the list is empty, set the new node as the first node
-        if (first == NULL)
+        if (first == nullptr)
         {
             first = t;
         }
@@ -349,7 +349,7 @@ public:
     // Delete an element at a specified index
     int Delete(int index)
     {
-        Node *p, *q = NULL;
+        Node *p, *q = nullptr;
         int x = -1;
         // Check for invalid index
         if (index < 1 || index > Length())
@@ -368,13 +368,13 @@ public:
         {
             // Traverse the list to find the correct position
             p = first;
-            for (int i = 0; i < index - 1 && p != NULL; i++)
+            for (int i = 0; i < index - 1 && p != nullptr; i++)
             {
                 q = p;
                 p = p->next;
             }
             // Delete the node at the correct position
-            if (p != NULL)
+            if (p != nullptr)
             {
                 q->next = p->next;
                 x = p->data;
@@ -390,7 +390,7 @@ public:
         int max = INT_MIN;
         Node *p = first;
         // Traverse the list and check if each node's data is greater than or equal to the previous node's data
-        while (p != NULL)
+        while (p != nullptr)
         {
             if (p->data < max)
             {
@@ -408,7 +408,7 @@ public:
         Node *p = first;
         Node *q = first->next;
         // Traverse the list
-        while (q != NULL)
+        while (q != nullptr)
         {
             // If the current node's data is equal to the next node's data, remove the next node
             if (p->data != q->data)
@@ -432,7 +432,7 @@ public:
         int i = 0;
         int arr[size];
         // Store the data in an array
-        while (p != NULL)
+        while (p != nullptr)
         {
             arr[i++] = p->data;
             p = p->next;
@@ -440,7 +440,7 @@ public:
         p = first;
         i--;
         // Reassign the data to the nodes in reverse order
-        while (p != NULL)
+        while (p != nullptr)
         {
             p->data = arr[i--];
             p = p->next;
@@ -453,7 +453,7 @@ public:
         Node *p = first;
         Node *q = nullptr, *r = nullptr;
         // Traverse the list and reverse the links between nodes
-        while (p != NULL)
+        while (p != nullptr)
         {
             r = q;
             q = p;
@@ -466,7 +466,7 @@ public:
     // Reverse the list recursively
     void reverseRecursion(Node *q, Node *p)
     {
-        if (p != NULL)
+        if (p != nullptr)
         {
             // Recursively reverse the remaining list
             reverseRecursion(p, p->next);
@@ -481,7 +481,7 @@ public:
     // Concatenate two linked lists
     Node *concatenate(LinkedList &l2)
     {
-        if (first == NULL)
+        if (first == nullptr)
         {
             first = l2.first;
         }
@@ -489,7 +489,7 @@ public:
         {
             // Traverse to the end of the first list
             Node *p = first;
-            while (p->next != NULL)
+            while (p->next != nullptr)
             {
                 p = p->next;
             }
